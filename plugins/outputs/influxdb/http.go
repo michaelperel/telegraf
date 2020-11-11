@@ -133,7 +133,7 @@ func NewHTTPClient(config HTTPConfig) (*httpClient, error) {
 
 	userAgent := config.UserAgent
 	if userAgent == "" {
-		userAgent = "Telegraf/" + internal.Version()
+		userAgent = internal.ProductToken()
 	}
 
 	if config.Headers == nil {
@@ -202,10 +202,12 @@ func (c *httpClient) Database() string {
 // Note that some names are not allowed by the server, notably those with
 // non-printable characters or slashes.
 func (c *httpClient) CreateDatabase(ctx context.Context, database string) error {
-	query := fmt.Sprintf(`CREATE DATABASE "%s"`,
-		escapeIdentifier.Replace(database))
+	query := fmt.Sprintf(`CREATE DATABASE "%s"`, escapeIdentifier.Replace(database))
 
 	req, err := c.makeQueryRequest(query)
+	if err != nil {
+		return err
+	}
 
 	resp, err := c.client.Do(req.WithContext(ctx))
 	if err != nil {
@@ -237,7 +239,7 @@ func (c *httpClient) CreateDatabase(ctx context.Context, database string) error 
 	}
 
 	// Don't attempt to recreate the database after a 403 Forbidden error.
-	// This behavior exists only to maintain backwards compatiblity.
+	// This behavior exists only to maintain backwards compatibility.
 	if resp.StatusCode == http.StatusForbidden {
 		c.createDatabaseExecuted[database] = true
 	}
