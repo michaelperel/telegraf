@@ -216,18 +216,10 @@ func (i *Iothub) Init() error {
 	}
 }
 
-var connected = false
-
 // Connect IoT Hub Client
 func (i *Iothub) Connect() error {
-	if !connected {
-		err := i.Client.Connect(context.Background())
-		if err != nil {
-			connected = true
-		}
-		return err
-	}
-	return nil
+	err := i.Client.Connect(context.Background())
+	return err
 }
 
 // Close IoT Hub Client connection
