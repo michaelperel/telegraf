@@ -116,6 +116,9 @@
   - [#8350](https://github.com/influxdata/telegraf/pull/8350) `inputs.ras` fix plugins/input/ras test
   - [#8329](https://github.com/influxdata/telegraf/pull/8329) `outputs.dynatrace` #8328 Fixed a bug with the state map in Dynatrace Plugin
 
+## v1.14.5 [2020-06-30]
+
+### Bugfixes
 ## v1.16.1 [2020-10-28]
 
 #### Release Notes
@@ -393,6 +396,7 @@
 
 ## v1.14.4 [2020-06-09]
 
+#### Bugfixes
 #### Bug Fixes
 
 - [#7325](https://github.com/influxdata/telegraf/issues/7325): Fix "cannot insert the value NULL error" with PerformanceCounters query.
@@ -402,6 +406,7 @@
 
 ## v1.14.3 [2020-05-19]
 
+#### Bugfixes
 #### Bug Fixes
 
 - [#7412](https://github.com/influxdata/telegraf/pull/7412): Use same timestamp for all objects in arrays in the json parser.
@@ -411,6 +416,7 @@
 
 ## v1.14.2 [2020-04-28]
 
+#### Bugfixes
 #### Bug Fixes
 
 - [#7241](https://github.com/influxdata/telegraf/issues/7241): Trim whitespace from instance tag in sqlserver input.
@@ -425,6 +431,7 @@
 
 ## v1.14.1 [2020-04-14]
 
+#### Bugfixes
 #### Bug Fixes
 
 - [#7236](https://github.com/influxdata/telegraf/issues/7236): Fix PerformanceCounter query performance degradation in sqlserver input.

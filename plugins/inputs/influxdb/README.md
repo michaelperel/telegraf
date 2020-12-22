@@ -42,6 +42,42 @@ InfluxDB-formatted endpoints. See below for more information.
 **Note:** The measurements and fields included in this plugin are dynamically built from the InfluxDB source, and may vary between versions:
 
 - influxdb
+  - n_shards
+- influxdb_database
+- influxdb_httpd
+- influxdb_measurement
+- influxdb_memstats
+  - heap_inuse
+  - heap_released
+  - mspan_inuse
+  - total_alloc
+  - sys
+  - mallocs
+  - frees
+  - heap_idle
+  - pause_total_ns
+  - lookups
+  - heap_sys
+  - mcache_sys
+  - next_gc
+  - gc_cpu_fraction
+  - other_sys
+  - alloc
+  - stack_inuse
+  - stack_sys
+  - buck_hash_sys
+  - gc_sys
+  - num_gc
+  - heap_alloc
+  - heap_objects
+  - mspan_sys
+  - mcache_inuse
+  - last_gc
+- influxdb_shard
+- influxdb_subscriber
+- influxdb_tsm1_cache
+- influxdb_tsm1_wal
+- influxdb_write
   - n_shards: The total number of shards in the specified database.
 - influxdb_ae _(Enterprise Only)_ : Statistics related to the Anti-Entropy (AE) engine in InfluxDB Enterprise clusters.
 - influxdb_cluster _(Enterprise Only)_ : Statistics related to the clustering features of the data nodes in InfluxDB Enterprise clusters.
