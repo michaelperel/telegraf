@@ -31,7 +31,7 @@ use_gateway = true
 If you are configuring this in IoT Hub, use the sample image below to create
 the telegraf module.
 
-![IoT Hub Sample](./iot_hub_sample.jpg)
+![IoT Hub Sample](./iot_hub_sample.png)
 
 ```
 # Minimal sample config file for Telegraf to read data from IoT Edge and
